@@ -10,8 +10,11 @@ import org.gradle.api.tasks.Copy
 class GreetingPlugin implements Plugin<Project> {
 
     @Override
-    void apply(Project target) {
-        target.task('hello', type: GreetingTask)
+    void apply(Project project) {
+        project.task('hello', type: GreetingTask)
+        project.task('hi', type: GreetingTask) {
+            greeting = 'hi!'
+        }
     }
 
 }
